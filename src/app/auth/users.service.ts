@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { UserI } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -6,25 +7,24 @@ import { Injectable } from '@angular/core';
 export class UsersService {
   constructor() { }
 
-  users = [
+  users:UserI[] = [
     {
       email: "admin@example.com",
       password: "example123",
-      role: "admin"
+      role: "admin",
+      token:"tokenprueba"
     },
     {
       email: "user@example.com",
       password: "example123",
-      role: "user"
+      role: "user",
+      token:"tokenprueba"
     },
   ]
 
 
   authenticate(email: string, password: string) {
-    console.log(email, password)
-    console.log(this.users)
     const user = this.users.find(u => u.email === email && u.password === password);
-    console.log(user)
-    return user ? { success: true, role: user.role } : { success: false };
+    return user ? { success: true, role: user.role, token: user.token } : { success: false };
   }
 }

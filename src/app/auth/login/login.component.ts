@@ -6,6 +6,7 @@ import { UsersService } from '../users.service';
 import { AuthService } from '../auth.service';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,8 @@ export class LoginComponent {
   usersService = inject(UsersService)
   authService = inject(AuthService)
   messageService = inject(MessageService)
+  router = inject(Router)
+
   loginForm: FormGroup
   loginError!: string | null
 
@@ -42,15 +45,17 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       const result = this.usersService.authenticate(email, password);
-      console.log(email,password)
-      console.log(result)
+
       if (result.success) {
         // Almacenar el rol en una cookie
         if (result.role)
           this.authService.setUserRole(result.role);
-        console.log(`Login exitoso. Rol: ${result.role}`);
+        if (result.token)
+          this.authService.setToken(result.token);
+        this.authService.isAuthSignal.set(true);
         this.messageService.add({ severity: 'success', summary: 'Login exitoso', detail: '¡Bienvenido/a!' });
         this.loginError = null; // Limpiar cualquier error anterior
+        this.router.navigate(['list'])
       } else {
         this.loginError = 'Credenciales incorrectas. Intenta de nuevo.';
       }

@@ -1,0 +1,28 @@
+<div class="w-full flex justify-center p-6 ">
+    <div class="container px-6">
+        <p-menubar [model]="items">
+            <ng-template pTemplate="start">
+                <ng-template pTemplate="item" let-item>
+                    <ng-container *ngIf="item.route; else urlRef">
+                        <a [routerLink]="item.route" class="p-menuitem-link">
+                            <span [class]="item.icon"></span>
+                            <span class="ml-2">{{ item.label }}</span>
+                        </a>
+                    </ng-container>
+                    <ng-template #urlRef>
+                        <a *ngIf="item.url" [href]="item.url" class="p-menuitem-link">
+                            <span [class]="item.icon"></span>
+                            <span class="ml-2">{{ item.label }}</span>
+                        </a>
+                    </ng-template>
+
+                </ng-template>
+            </ng-template>
+            <ng-template pTemplate="end">
+                <div class="flex align-items-center px-6">
+                    <button pButton class="border-primary border-2  rounded py-2 text-primary px-4" (click)="logout()">Logout</button>
+                </div>
+            </ng-template>
+        </p-menubar>
+    </div>
+</div>
