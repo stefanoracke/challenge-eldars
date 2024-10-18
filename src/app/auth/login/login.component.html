@@ -1,0 +1,46 @@
+<div class="w-full min-h-screen flex justify-center items-center p-8">
+    <article class="shadow-primary/80 shadow w-full max-w-[540px] rounded-md flex flex-col gap-4 !p-6 ">
+        <h5 class="text-center text-lg font-bold">Login</h5>
+        <form class="w-full flex flex-col gap-6 !px-12" [formGroup]="loginForm">
+            <div>
+                <label for="email">Email</label>
+                <input id="email" class="w-full bg-transparent border-b-primary border-b" type="text" pInputText
+                    formControlName="email" type="email" />
+
+                @if (email?.invalid && (email?.touched || email?.dirty)) {
+                <div>
+                    @if (email?.errors?.['required']) {
+                    <small class="text-danger">El campo de email es obligatorio.</small>
+                    }
+                    @if (email?.errors?.['email']) {
+                    <small class="text-danger">Por favor, ingresa un email válido.</small>
+                    }
+                </div>
+                }
+
+            </div>
+            <div>
+                <label for="password">Password</label>
+
+                <input id="password" type="password" class="w-full bg-transparent border-b-primary border-b" pInputText
+                    formControlName="password" type="password" />
+                @if (password?.invalid && (password?.touched || password?.dirty)) {
+                <div>
+                    @if (password?.errors?.['required']) {
+                    <small class="text-danger">El campo contraseña es obligatorio.</small>
+                    }
+                    @if (password?.errors?.['minlength']) {
+                    <small class="text-danger">La contraseña debe tener al menos 8 caracteres.</small>
+                    }
+                </div>
+                }
+            </div>
+            <p-button (click)="onSubmit()" label="Iniciar sesion" type="submit"
+                class="bg-primary mt-4 !py-2 text-center rounded" [disabled]="loginForm.invalid" />
+            @if(loginError){
+                <small class="text-danger pt-6">{{loginError}}</small>
+            }
+        </form>
+    </article>
+
+</div>
