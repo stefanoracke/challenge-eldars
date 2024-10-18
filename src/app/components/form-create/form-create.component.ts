@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-create',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './form-create.component.html',
   styleUrl: './form-create.component.scss'
 })
-export class FormCreateComponent {
+export class FormCreateComponent implements OnInit {
+  fb = inject(FormBuilder)
+  blogForm!:FormGroup
+
+  ngOnInit(): void {
+      
+  }
 
 }
