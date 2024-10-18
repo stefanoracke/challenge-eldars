@@ -12,6 +12,12 @@ export class FormCreateComponent implements OnInit {
   fb = inject(FormBuilder)
   blogForm!:FormGroup
 
+  constructor(){
+    this.blogForm = this.fb.group({
+      
+    })
+  }
+
   ngOnInit(): void {
       
   }
