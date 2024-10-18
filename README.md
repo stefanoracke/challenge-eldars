@@ -1,27 +1,46 @@
-# Eldar
+# Eldar Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+Descripción breve de la aplicación que has creado con Angular 18.0.6 utilizando PrimeNG y Tailwind CSS.
 
-## Development server
+## Tecnologías Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 18
+- PrimeNG
+- Tailwind CSS
 
-## Code scaffolding
+## Requisitos Previos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Asegúrate de tener instalado lo siguiente en tu máquina:
 
-## Build
+- [Node.js](https://nodejs.org/) (v14 o superior)
+- [npm](https://www.npmjs.com/) (v6 o superior)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Instalación
 
-## Running unit tests
+Sigue estos pasos para instalar y configurar el proyecto:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. **Clona el repositorio**:
 
-## Running end-to-end tests
+   ```bash
+   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+   cd nombre-del-repositorio
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. **Instala las dependencias**:
+    ```bash
+    npm install
+3. **Instala las dependencias**:
+    Configura Tailwind CSS: Si aún no lo has hecho, asegúrate de tener configurado Tailwind CSS siguiendo la documentación oficial de Tailwind.
 
-## Further help
+### Usuarios y Contraseñas
+A continuación se presentan las credenciales para acceder a la aplicación:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+#### Rol Admin
+Email: admin@example.com
+Contraseña: example123
+#### Rol Usuario
+Email: user@example.com
+Contraseña: example123
+
+## Notas Adicionales
+Asegúrate de que tu entorno esté configurado correctamente para evitar problemas durante la instalación.
+Puedes personalizar la configuración de Tailwind CSS en el archivo tailwind.config.js.

@@ -31,12 +31,12 @@ export class NavbarComponent implements OnInit {
                     this.router.navigate(['/list']);
                 }
             },
-            {
-                label: 'Cards lists',
-                command: () => {
-                    this.router.navigate(['/card-list']);
-                }
-            },
+            // {
+            //     label: 'Cards lists',
+            //     command: () => {
+            //         this.router.navigate(['/card-list']);
+            //     }
+            // },
         ];
     }
 }

@@ -4,7 +4,9 @@
         <div class="bg-white shadow shadow-primary/80 rounded p-6">
             <div class="w-full flex flex-wrap justify-between gap-4 items-start py-4">
                 <h2 class="text-primary pb-4 font-bold text-[24px]">Tabla</h2>
-                <a href="create" pButton class="bg-primary text-white flex justify-center items-center rounded py-2  px-4">Crear</a>
+                @if(isAdmin){
+                    <a href="create" pButton class="bg-primary text-white flex justify-center items-center rounded py-2  px-4">Crear</a>
+                }
             </div>
             <p-table [value]="posts" [paginator]="true" [rows]="10" [tableStyle]="{ 'min-width': '50rem' }"
                 [rowsPerPageOptions]="[5, 10, 20]">

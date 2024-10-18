@@ -1,1 +1,5 @@
-<p>edit works!</p>
+<div>
+    @if(post$ | async; as post){
+    <app-form-create [post]="post" titleForm="Edición de post" label="Editar"></app-form-create>
+    }
+</div>
