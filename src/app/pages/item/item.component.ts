@@ -2,10 +2,11 @@ import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { ApiService } from '../../services/api.service';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-item',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './item.component.html',
   styleUrl: './item.component.scss'
 })
